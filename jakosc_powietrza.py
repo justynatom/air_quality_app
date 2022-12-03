@@ -2,6 +2,7 @@ import requests
 import datetime
 import time
 import matplotlib.pyplot as plt
+from matplotlib.ticker import (MultipleLocator, AutoMinorLocator)
 
 
 def search_stations_in_province(province, data):
@@ -70,7 +71,7 @@ def get_date_and_sensors_values_lists(data):
         #print(measurement)
         date_list.append(measurement['date'])
         if measurement['value'] is None:
-            value_list.append(-1)
+            value_list.append(0)
         else:
             value_list.append(measurement['value'])
     date_list.reverse()
@@ -85,12 +86,15 @@ def plot_graph(dates, values):
 
     # naming the x axis
     plt.xlabel('x - axis')
-    plt.tick_params(axis='x', rotation=75, labelsize=6)
+    plt.tick_params(axis='x', rotation=85, labelsize=5)
     # naming the y axis
     plt.ylabel('y - axis')
 
+    plt.grid(True, which='major')
+
     # giving a title to my graph
     plt.title('My first graph!')
+    plt.margins(x=0, y=0)
 
     # function to show the plot
     plt.show()
@@ -105,9 +109,11 @@ def send_api_request():
     print(len(data))
     print(data[1])
     print(data[1]['city']['name'])
+
     stations = search_stations_in_province("opolskie", data)
     print_stations_names_from_list(stations)
     station_id = choose_station_and_find_station_id(stations)
+
     sensors = send_api_request_sensors(station_id)
     print_sensor_names_from_list(sensors)
     sensor_id = choose_sensor_and_find_sensor_id(sensors)

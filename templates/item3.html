@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1> Available stations in {{ station }}</h1>
+    {% for item in items %}
+    <h2>{{ item }}</h2>
+    {% endfor %}
+    <form method="post" action="/sensors/{sensor_id}">
+        <label for="id2">Input sensor id:
+        </label><br>
+        <input type="text" id="id2" name="id2"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

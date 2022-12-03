@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1> Available stations in {{ province }}</h1>
+    {% for item in items %}
+    <h2>{{ item }}</h2>
+    {% endfor %}
+    <form method="post" action="/test3">
+        <label for="id">Input station id:
+        </label><br>
+        <input type="text" id="id" name="id"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

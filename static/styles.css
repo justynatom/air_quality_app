@@ -1,0 +1,10 @@
+h1 {
+    color: green;
+}
+img {
+    max-width: 60%;
+    max-height: 60%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}

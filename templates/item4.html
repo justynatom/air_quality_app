@@ -5,8 +5,13 @@
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
 </head>
 <body>
-    <h1> Measurements</h1>
+    <h1> Graph: </h1>
     <img src="{{ url_for('static', path='/plot.jpg') }}" alt="Graph">
+
+    <h1> Measurements: </h1>
+    {% for item in data %}
+    <h3>{{ item }}</h3>
+    {% endfor %}
 
 </body>
 </html>

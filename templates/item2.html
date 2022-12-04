@@ -9,10 +9,10 @@
     {% for item in items %}
     <h2>{{ item }}</h2>
     {% endfor %}
-    <form method="post" action="/test3">
+    <form method="post" action="/stations/{province}">
         <label for="id">Input station id:
         </label><br>
-        <input type="text" id="id" name="id"><br>
+        <input type="number" id="id" name="id" min={{ min_value }} max={{ max_value }}><br>
         <input type="submit" value="Submit">
     </form>
 </body>

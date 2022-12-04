@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Main page</h1>
+    <form method="post" action="/">
+        <label for="province">Choose province:</label>
+        <select id="province" name="province">
+            {% for choice in choices %}
+            <option value={{choice}}>{{choice}}</option>
+            <!-- The choices are correctly displayed in the dropdown menu -->
+            {% endfor %}
+            </select>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

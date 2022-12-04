@@ -27,41 +27,6 @@ async def get_province(province: str = Form()):
     return RedirectResponse(url="/stations/" + str(province.title()), status_code=status.HTTP_302_FOUND)
 
 
-@app.get("/hello/{name}", response_model=HelloResp)
-async def hello(name: str):
-    return HelloResp(msg = f"Hello {name}!")
-
-@app.get('/counter')
-def counter():
-    app.counter += 1
-    return str(app.counter)
-
-
-class Product(BaseModel):
-    name: str
-    description: str | None = None
-    price: float
-    tax: float | None = None
-    code: str
-
-@app.post("/product/")
-async def create_item(product: Product):
-    return product
-
-
-@app.get('/test')
-async def get_something(
-        choice: str = Query('eu', enum =['eu','us'])
-):
-    return {'selected': choice}
-
-
-
-
-@app.get("/test2/{id}", response_class=HTMLResponse)
-async def read_item(request: Request, id: str):
-    return templates.TemplateResponse("item.html", {"request": request, "id": id})
-
 @app.get("/stations/{province}", response_class=HTMLResponse)
 async def read_item(request: Request, province: str):
     item = obj.get_stations_in_province(province)

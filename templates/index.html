@@ -5,7 +5,16 @@
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
 </head>
 <body>
-    <h1>Main page</h1>
+    <ul class="breadcrumb">
+      <li><a href="/">Home</a></li>
+    </ul>
+    <h1>Air quality app</h1>
+    <h2>This is the main page of my app to check air quality. In first step you can choose province, which interest you.<br>
+        In next steps you can choose city, stations and sensors which interest you.
+    </h2>
+    <h2>
+        This app is using air quality data providen by GIOŚ and their API available at <a href="https://powietrze.gios.gov.pl/pjp/content/api">GIOŚ API</a>
+    </h2>
     <form method="post" action="/">
         <label for="province">Choose province:</label>
         <select id="province" name="province">

@@ -77,5 +77,7 @@ class Air_quality_app:
         return numerical_data
 
     def get_provinces_list(self):
-        province_list = ["Dolnośląskie", "Mazowieckie", "Wielkopolskie", "Lubuskie"]
+        province_list = ["DOLNOŚLĄSKIE", "MAZOWIECKIE", "WIELKOPOLSKIE", "LUBUSKIE", "ZACHODNIOPOMORSKIE","POMORSKIE",
+                         "OPOLSKIE","MAŁOPOLSKIE", "ŚLĄSKIE", "KUJAWSKO-POMORSKIE", "WARMIŃSKO-MAZURSKIE", "LUBELSKIE",
+                         "ŚWIĘTOKRZYSKIE", "PODLASKIE","PODKARPACKIE", "ŁÓDZKIE"]
         return province_list
